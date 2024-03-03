@@ -29,4 +29,26 @@ public class StudentServiceTest
 
         Assert.Contains(expectedName, actualFullName);
     }
+    
+    [Fact]
+    public void ShouldPassTheExam()
+    {
+        //Arrange
+        var marks = 85;
+        //Act
+        var actualValue = _student.IsPassedTheExam(marks);
+        //Assert
+        Assert.True(actualValue);
+    }
+    
+    [Fact]
+    public void ShouldFailTheExam()
+    {
+        //Arrange
+        var marks = 65;
+        //Act
+        var actualValue = _student.IsPassedTheExam(marks);
+        //Assert
+        Assert.False(actualValue);
+    }
 }

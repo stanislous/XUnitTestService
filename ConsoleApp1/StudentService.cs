@@ -6,4 +6,11 @@ public class StudentService
     {
         return $"{firstName} {lastName}";
     }
+    
+    public bool IsPassedTheExam(int marks)
+    {
+        if(marks > 70)
+            return true;
+        return false;
+    }
 }

@@ -51,4 +51,16 @@ public class StudentServiceTest
         //Assert
         Assert.False(actualValue);
     }
+    
+    [Fact]
+    public void ShouldFullNameBeNotNull()
+    {
+        //Arrange
+        var firstName = "Shehan";
+        var lastName = "Eranga";
+        //Act
+        var actualFullName = _student.CreateFullName(firstName, lastName);
+        //Assert
+        Assert.NotNull(actualFullName);
+    }
 }

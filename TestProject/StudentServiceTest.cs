@@ -17,4 +17,16 @@ public class StudentServiceTest
 
         Assert.Equal(expectedFullName, actualFullName, ignoreCase: true);
     }
+    
+    [Fact]
+    public void StudentReturnPartOfTheNameByGettingFirstNameAndLastName()
+    {
+        var firstName = "Shehan";
+        var lastName = "Eranga";
+        var expectedName = "Eranga";
+
+        var actualFullName = _student.CreateFullName(firstName, lastName);
+
+        Assert.Contains(expectedName, actualFullName);
+    }
 }

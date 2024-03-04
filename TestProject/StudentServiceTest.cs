@@ -63,4 +63,17 @@ public class StudentServiceTest
         //Assert
         Assert.NotNull(actualFullName);
     }
+
+    [Fact]
+    public void EmailShouldNotBeNullOrEmpty()
+    {
+        //Arrange
+        var emptyEmail = string.Empty;
+        string nullEmail = null;
+        //Act
+        //Assert
+        var exception = Assert.Throws<ArgumentException>(() => 
+            _student.GetStudentId(emptyEmail));
+        Assert.Equal("Email is Required", exception.Message);
+    }
 }

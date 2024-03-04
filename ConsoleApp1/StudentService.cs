@@ -13,4 +13,11 @@ public class StudentService
             return true;
         return false;
     }
+
+    public int GetStudentId(string email)
+    {
+        if (string.IsNullOrEmpty(email))
+            throw new ArgumentException("Email is Required!");
+        return 1;
+    }
 }

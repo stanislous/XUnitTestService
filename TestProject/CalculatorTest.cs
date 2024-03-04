@@ -1,6 +1,6 @@
-using ConsoleApp1;
+using XunitService;
 
-namespace TestProject;
+namespace XUnitTestProject;
 public class CalculatorTest
 {
     private CalculatorService _calc = new();
@@ -29,5 +29,17 @@ public class CalculatorTest
         var actualVal = _calc.AddTwoDoubles(a, b);
         // then
         Assert.Equal(expectedVal, actualVal, 1);
+    }
+
+    [Fact]
+    public void Should_NotContains_Zero()
+    {
+        //Arrange
+        //Act
+        var actualNumbers = _calc.GetRandomNumbers();
+        //Assert
+        Assert.All(actualNumbers, n => Assert.NotEqual(0, n));
+        //Both are correct
+        //Assert.DoesNotContain(0, actualNumbers);
     }
 }

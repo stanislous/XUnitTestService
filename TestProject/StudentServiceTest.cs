@@ -1,6 +1,6 @@
-﻿using ConsoleApp1;
+﻿using XunitService;
 
-namespace TestProject;
+namespace XUnitTestProject;
 
 public class StudentServiceTest
 {

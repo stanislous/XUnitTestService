@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1;
+﻿namespace XunitService;
 
 public class StudentService
 {

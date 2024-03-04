@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1;
+﻿namespace XunitService;
 
 public class CalculatorService
 {
@@ -10,5 +10,11 @@ public class CalculatorService
     public double AddTwoDoubles(double a, double b)
     {
         return a + b;
+    }
+
+    public List<int> GetRandomNumbers()
+    {
+        var list = new List<int> { 10, 22, 63, 94, 25, 46, 79, 80, 91 };
+        return list;
     }
 }

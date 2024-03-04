@@ -1,4 +1,5 @@
 ﻿using XunitService;
+using XunitService.Models;
 
 namespace XUnitTestProject;
 
@@ -75,5 +76,16 @@ public class StudentServiceTest
         var exception = Assert.Throws<ArgumentException>(() => 
             _student.GetStudentId(emptyEmail));
         Assert.Equal("Email is Required", exception.Message);
+    }
+    
+    [Fact]
+    public void ShouldBeCSharpStudent()
+    {
+        //Arrange
+        var courseId = 100;
+        //Act
+        var actualStudent = _student.GetStudentCourseId(courseId);
+        //Assert
+        Assert.IsType<CSharpStudent>(actualStudent);
     }
 }
